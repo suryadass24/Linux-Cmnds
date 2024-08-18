@@ -1,0 +1,7 @@
+Lock a user
+ passwd -l incarnus-admin
+
+ 
+Unlock a user
+
+passwd -u incarnus-prod
