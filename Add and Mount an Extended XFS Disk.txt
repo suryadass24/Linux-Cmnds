@@ -1,0 +1,19 @@
+Add and Mount an Extended XFS Disk in Linux
+
+1 >Verify the New Disk
+    lsblk /fdisk -l
+2> Partition the Disk
+    sudo fdisk /dev/sdb
+3 > Format the Partition with XFS
+    sudo mkfs.xfs /dev/sdb
+4 > Create a Mount Point
+    sudo mkdir /mnt/newdisk
+5 > Mount the Disk
+    sudo mount /dev/sdb /mnt/newdisk
+6> Verify the mount
+   df -h
+7> Update /etc/fstab for Persistent Mount
+   sudo blkid /dev/sdb
+   output: /dev/sdb: UUID="abcd-1234-xyz" TYPE="xfs"
+8 > Test the fstab Configuration {optional}
+    sudo mount -a
